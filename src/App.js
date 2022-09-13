@@ -1,24 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
+import HeaderLayout from './components/HeaderLayout';
+import MainMenu from './components/MainMenu';
+import InfoBar from './components/InfoBar';
+import Slider from './components/Slider';
+import Hamburger from './components/Hamburger';
+
+import styled from 'styled-components';
+import MobileMenu from './components/MobileMenu';
+import { useEffect, useState } from 'react';
+import PrimaryMenu from './components/PrimaryMenu';
+
+const HamburgerWrapper = styled.div`
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background-color: white;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+`
 
 function App() {
+
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isTopVisible, setIsTopVisible] = useState(true);
+
+  const changeMobileMenuState = () => {
+    setIsMobileMenuOpen(prev => !prev);
+  }
+
+  const setStateTopHandler = () => {
+    if(window.scrollY > 0)
+      setIsTopVisible(false);
+    else setIsTopVisible(true);
+  }
+
+  useEffect(()=>{
+      window.addEventListener('scroll', setStateTopHandler);
+      return ()=> window.removeEventListener('scroll', setStateTopHandler)
+  }, [])
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <HeaderLayout>
+        <Slider />
+        <InfoBar isTopVisible={isTopVisible} />
+        <MainMenu isTopVisible={isTopVisible} />
+        <PrimaryMenu isTopVisible={isTopVisible} />
+        <MobileMenu isMobileMenuOpen={isMobileMenuOpen} />
+        <HamburgerWrapper>
+          <Hamburger changeMobileMenuState={changeMobileMenuState}/>
+        </HamburgerWrapper>
+      </HeaderLayout>
+    </>
   );
 }
 
