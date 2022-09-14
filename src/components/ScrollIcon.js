@@ -6,7 +6,7 @@ const Div = styled.div`
     box-shadow: inset 0 0 4px 2px #fff;
     border-radius: 25px;
     position:absolute;
-    bottom: 2rem;
+    bottom: 6rem;
     left: 50%;
     transform: translate(-50%, 0);
 

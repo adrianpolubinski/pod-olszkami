@@ -13,7 +13,6 @@ const Div = styled.div`
     width: 100%;
     height: 7rem;
 
-    padding: 2rem 0 0 0;
     display: none;
     
     @media (min-width: 800px){

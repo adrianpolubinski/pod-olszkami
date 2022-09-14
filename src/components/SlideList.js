@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import Slide from './Slide';
 import { useEffect, useState } from 'react';
-
+import Pagination from './Pagination';
 
 const Ul = styled.ul`
     list-style: none;
@@ -13,9 +13,11 @@ const Ul = styled.ul`
 `;
 
 
+
 function SlideList() {
 
     const [activeSlide, setActiveSlide] = useState(0);
+    const [autoChangeSlide, setAutoChangeSlide] = useState(true);
 
     const slidesConfig = [{
         url: 'img/slider/slider-image-1.jpg',
@@ -35,9 +37,16 @@ function SlideList() {
 
     
     useEffect(() => {
-        const intervalIndex = setInterval(changeSlideHandle, 6000)
+        let intervalIndex;
+
+        if(autoChangeSlide){
+            intervalIndex = setInterval(changeSlideHandle, 6000);
+        } else {
+            clearInterval(intervalIndex);
+        }
+
         return () => clearInterval(intervalIndex);
-      }, []);
+      }, [autoChangeSlide]);
 
 
 
@@ -50,18 +59,38 @@ function SlideList() {
         })
     }
 
+
+    const changeOnSelectSlide=(slideIndex)=>{
+        setActiveSlide(slideIndex);
+    }
     
+    const stopAutoChangeSlide = () => {
+        setAutoChangeSlide(false)
+    }
+
+    const startAutoChangeSlide = () => {
+        setAutoChangeSlide(true)
+    }
 
     const slideElements = slidesConfig.map(( slideConfig, index ) => {
         return (
-            <Slide key={index} config={slideConfig} isActive={activeSlide===index?true:false}/>
+            <Slide key={index} config={slideConfig} isActive={activeSlide===index?true:false} />
         )
     })
 
     return (
-        <Ul>
-            {slideElements}
-        </Ul>
+        <>
+            <Ul>
+                {slideElements}
+            </Ul>
+            <Pagination 
+            slidesCount={slidesConfig.length} 
+            activeSlide={activeSlide} 
+            changeOnSelectSlide={changeOnSelectSlide} 
+            stopAutoChangeSlide={stopAutoChangeSlide}
+            startAutoChangeSlide={startAutoChangeSlide}/>
+        </>
+        
     )
   }
   

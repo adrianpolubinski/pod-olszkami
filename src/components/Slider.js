@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import SlideList from './SlideList'
 import ScrollIcon from './ScrollIcon';
 
-
 const Div = styled.div`
     position: relative;
     width: 100%;

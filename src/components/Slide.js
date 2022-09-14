@@ -13,7 +13,7 @@ const Li = styled.li`
   top: 0;
 
   opacity: 0;
-  transition: 1.5s;
+  transition: 1s;
 
 
   & div {

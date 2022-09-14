@@ -21,8 +21,33 @@ const Nav = styled.nav`
         text-transform: uppercase;
         font-family: "Open Sans";
         font-weight: 700;
+        position: relative;
         
-    }    
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: -3px;
+            height: 3px;
+            width: 0;
+            background-color: red;
+            transition: width .3s;
+        }
+
+        &:hover {
+
+            &::after {
+                width: 100%;
+                left: 0;
+            }
+        }
+    }   
+
+
+    
+   
 
     ${props => { if(props.spaceBetween) return `
             & li{

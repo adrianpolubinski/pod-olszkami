@@ -5,12 +5,12 @@ import Brand from "./Brand";
 
 const Div = styled.div`
     position: fixed;
-    top: 5rem;
+    top: 7rem;
     left: 0;
     width: 100%;
     height: 15rem;
 
-    transform: translateY( calc(-100% - 5rem) );
+    transform: translateY( calc(-100% - 7rem) );
     transition: .7s;
 
     
