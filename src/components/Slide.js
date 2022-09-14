@@ -28,6 +28,7 @@ const Li = styled.li`
     color: white;
     text-align: center;
     text-shadow: .3rem .3rem .3rem #000;
+    
 
  }
 
@@ -35,6 +36,7 @@ const Li = styled.li`
       font-size: 5rem;
       color:white;
       text-shadow: .3rem .3rem .3rem #000;
+
   } 
 
   ${props => {
