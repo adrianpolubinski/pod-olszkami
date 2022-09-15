@@ -1,8 +1,10 @@
 import HeaderLayout from './components/HeaderLayout';
 import MainMenu from './components/MainMenu';
 import InfoBar from './components/InfoBar';
-import Slider from './components/Slider';
 import Hamburger from './components/Hamburger';
+
+import SlideList from './components/SlideList';
+import ScrollIcon from './components/ScrollIcon';
 
 import styled from 'styled-components';
 import MobileMenu from './components/MobileMenu';
@@ -11,12 +13,27 @@ import PrimaryMenu from './components/PrimaryMenu';
 
 const HamburgerWrapper = styled.div`
   position: fixed;
-  top: 2rem;
-  right: 2rem;
+  top: 1rem;
+  right: 1rem;
   background-color: white;
-  width: 6rem;
+  width: 5rem;
+  height: 4rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+  
+  @media (min-width: 768px){
+    width: 6rem;
+    height: 5rem;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  @media (min-width: 1200px) {
+        display: none;
+    }
+
+
 `
 
 function App() {
@@ -44,7 +61,8 @@ function App() {
   return (
     <>
       <HeaderLayout>
-        <Slider />
+        <SlideList />
+        <ScrollIcon />
         <InfoBar isTopVisible={isTopVisible} />
         <MainMenu isTopVisible={isTopVisible} />
         <PrimaryMenu isTopVisible={isTopVisible} />

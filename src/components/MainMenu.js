@@ -5,7 +5,7 @@ import Brand from "./Brand";
 
 const Div = styled.div`
     position: fixed;
-    top: 7rem;
+    top: 0;
     left: 0;
     width: 100%;
     height: 15rem;
@@ -15,6 +15,10 @@ const Div = styled.div`
 
     
     margin: 0 auto;
+
+    @media (min-width: 768px) {
+        top: 7rem
+    }
 
     ${props => {
         if(props.isVisible)
@@ -42,7 +46,11 @@ const Logo = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    height: 100%;
+    height: 70%;
+
+    @media (min-width: 768px) {
+        height: 100%;
+    }
 
     & a {
         height: 100%;

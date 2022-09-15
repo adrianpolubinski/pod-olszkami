@@ -5,6 +5,11 @@ import Brand from "./Brand";
 import MainNav from "./MainNav";
 import SocialList from "./SocialList";
 
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLocationDot, faPhone, faCamera } from "@fortawesome/free-solid-svg-icons"
+import { faFacebook} from '@fortawesome/free-brands-svg-icons'
+
 const Div = styled.div`
     
 
@@ -13,10 +18,10 @@ const Div = styled.div`
     right: 0;
 
     transform:translateX(100%);
-    transition: .7s ease;
+    transition: transform .7s ease;
 
     height: 100vh;
-    width: 30rem;
+    width: 28rem;
     background-color: white;
 
     display: flex;
@@ -64,12 +69,30 @@ function MobileMenu({isMobileMenuOpen}){
             </NavigationWrapper>
            
             
-            <SocialList black column>
-                <a href="/"><i className="fa-solid fa-mobile-retro"></i>+48 222 222 222</a>
-                <a href="/"><i className="fa-solid fa-envelope"></i>Przykład@o2.pl</a>
-                <a href="/"><i className="fa-solid fa-location-dot"></i>16-500 Frącki</a>
-                <a href="/"><i className="fa-brands fa-facebook"></i>Facebook</a>
-                <a href="/"><i className="fa-brands fa-youtube"></i>YouTube</a>
+            <SocialList black column mobileMenu>
+
+                <a href="https://www.facebook.com/profile.php?id=100063618430927" target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faFacebook} />Facebook
+                </a>
+                <a href="https://instagram.com/kajaki_fracki?igshid=YmMyMTA2M2Y" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faCamera} />Instagram
+                </a>
+                {/* <a href="/"><FontAwesomeIcon icon={faEnvelope} />Przykład@o2.pl</a> */}
+                <a href="https://www.google.com/maps/place/Kajaki+i+sauna+Fr%C4%85cki,+Fr%C4%85cki+32,+16-506+Fr%C4%85cki/@53.9788196,23.2901432,16z/data=!4m5!3m4!1s0x46e0f7ada55ec777:0xaa9e10921afa3744!8m2!3d53.9791502!4d23.2916037?hl=pl-PL"  target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faLocationDot} />
+                    <div>
+                        <p>Frącki 32</p>
+                        <p>16-506 Giby</p>
+                    </div>  
+                </a>
+                <a href="tel:+48606341300">
+                    <FontAwesomeIcon icon={faPhone} />
+                    <div>
+                        <p>+48 606 341 300</p>
+                        <p>+48 696 143 858</p>
+                        <p>+48 570 345 102</p>
+                    </div>
+                </a>
             </SocialList>
            
         </Div>

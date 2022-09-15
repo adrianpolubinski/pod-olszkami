@@ -17,12 +17,15 @@ const Nav = styled.nav`
     & a {
         color: white;   
         text-shadow: 3px 3px 3px #000;
-        font-size: 2rem;  
+        font-size: 1.6rem;  
         text-transform: uppercase;
         font-family: "Open Sans";
         font-weight: 700;
         position: relative;
         
+        @media (min-width: 500px) {
+            font-size: 2rem;
+        }
 
         &::after {
             content: "";

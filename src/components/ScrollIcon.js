@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAnglesDown } from "@fortawesome/free-solid-svg-icons"
+
+
+
 const Div = styled.div`
-    width: 40px;
-    height: 70px;
+    width:  3.5rem;
+    height: 6rem;
     box-shadow: inset 0 0 4px 2px #fff;
     border-radius: 25px;
     position:absolute;
@@ -10,6 +15,11 @@ const Div = styled.div`
     left: 50%;
     transform: translate(-50%, 0);
 
+
+    @media (min-width: 768px) {
+        width: 4rem;
+        height: 7rem;
+    }
 
     &::before {
         content: "";
@@ -24,7 +34,7 @@ const Div = styled.div`
         transform: translateX(-50%);
     }
     
-    & i {
+    & svg {
         top: 20%;
         position: absolute;
         left: 50%;
@@ -57,10 +67,12 @@ const Div = styled.div`
     }
 `;
 
+
+
 function ScrollIcon() {
     return (
         <Div>
-            <i className='fa-solid fa-angles-down'></i>
+            <FontAwesomeIcon icon={faAnglesDown} />
         </Div>
     )
 }

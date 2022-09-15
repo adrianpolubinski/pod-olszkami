@@ -1,19 +1,19 @@
 import styled from "styled-components";
+import MobileMenu from "./MobileMenu";
 
 const Ul = styled.ul`
 
-    list-style: none;
     display: flex;
 
     & li {
         margin: 0 2rem;
+
         &:first-child {
             margin-left: 0;
         }
         &:last-child {
             margin-right: 0;
         }
-       
     }
 
     & a {
@@ -24,33 +24,34 @@ const Ul = styled.ul`
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
 
         text-shadow: .3rem .3rem .3rem #000;
     }
 
-    & i {
-        margin: .5rem auto;
+    & svg {
+        margin-bottom: .5rem;
         font-size: 2rem;
+        
     }
 
-
-    // modifiers
+    // Modifiers
     ${props=> { 
         if(props.column) 
         return `
-            flex-direction: column;
 
+            flex-direction: column;
+         
             & a {
                 flex-direction: row;
                 text-shadow: none;
             }
             & li {
-                margin: 1rem 0;
-                
+                margin: 1rem 0;    
             }
-            & i {
-                margin: 0;
+            & svg {
                 margin-right: 1rem ;
+                margin-bottom: 0;
             }
     `}}
 
@@ -62,11 +63,26 @@ const Ul = styled.ul`
         }
     `}}
 
+    // Media
+    ${props => {
+        if(props.mobileMenu){
+            return `
+
+                @media (min-width: 500px){
+                    & a {
+                        font-size: 2rem;
+                    }
+                }
+                
+            `;
+        }
+    }}
+
 `
 
 
 
-function SocialList({children, black, column}) {
+function SocialList({children, black, column, mobileMenu}) {
     
     const socialElements = children.map((social, index) => (
         <li key={index}>
@@ -75,7 +91,7 @@ function SocialList({children, black, column}) {
     ))
 
     return (
-        <Ul black={black} column={column}>
+        <Ul black={black} column={column} mobileMenu={mobileMenu}>
             { socialElements }
         </Ul>
     )

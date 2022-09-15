@@ -24,19 +24,25 @@ const Li = styled.li`
   }
 
   & div h2 {
-    font-size: 8rem;
+    font-size: 5rem;
     color: white;
     text-align: center;
     text-shadow: .3rem .3rem .3rem #000;
-    
 
+    @media (min-width: 768px) {
+      font-size: 8rem;
+    }
+  
  }
 
   & div p{
-      font-size: 5rem;
+      font-size: 3rem;
       color:white;
       text-shadow: .3rem .3rem .3rem #000;
 
+      @media (min-width: 500px) {
+      font-size: 5rem;
+    }
   } 
 
   ${props => {

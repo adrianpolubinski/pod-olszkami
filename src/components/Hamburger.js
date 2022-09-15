@@ -7,24 +7,20 @@ const Button = styled.button`
     justify-content: center;
     border: none;
 
-    width: 5rem;
-    height: 5rem;
+    width: 100%;
+    height: 100%;
 
     background-color: inherit;
 
-    @media (min-width: 1200px) {
-        display: none;
-    }
-
     & div {
         position: relative;
-        width: 3.6rem;
-        height: 3rem;
+        width: 60%;
+        height: 60%;
     }
 
     & span {
         position: absolute;
-        width: 3.6rem;
+        width: 100%;
         height: .3rem;
         background-color: #000;
         transition: .2s ease-in;
@@ -50,7 +46,6 @@ const Button = styled.button`
         if(props.isActive)
             return `
             & span{
-        
 
                 &:nth-child(1) {
                     transform: translate(-50%);
@@ -60,6 +55,7 @@ const Button = styled.button`
                 &:nth-child(2) {
                     transform: translateY(-50%) rotate(45deg);
                 }
+
                 &:nth-child(3) {
                     transform: translateY(-50%) rotate(-45deg);
                 }
@@ -68,11 +64,8 @@ const Button = styled.button`
                     transform: translate(50%);
                     opacity: 0;
                 }
-            }
-
-            
-            `
-        }}
+            }`
+    }}
 `
 
 function Hamburger(props){
