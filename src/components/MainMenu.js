@@ -10,14 +10,14 @@ const Div = styled.div`
     width: 100%;
     height: 15rem;
 
-    transform: translateY( calc(-100% - 7rem) );
+    transform: translateY( calc(-100% - 8rem) );
     transition: .7s;
 
     
     margin: 0 auto;
 
     @media (min-width: 768px) {
-        top: 7rem
+        top: 8rem
     }
 
     ${props => {
@@ -26,11 +26,6 @@ const Div = styled.div`
                 transform: translateY(0);
             `
     }}
-
-
-    
- 
-
 `;
 
 const MainNavWrapper = styled.div`
@@ -38,7 +33,6 @@ const MainNavWrapper = styled.div`
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    max-width: 122rem;
 `;
 
 const Logo = styled.div`
@@ -75,9 +69,8 @@ function MainMenu({isTopVisible}) {
             <MainNav spaceBetween mainMenu/>
         </MainNavWrapper>
         <Logo>
-            <a href="/">
+            <a href="#home">
                 <Brand resizeByHeight/>
-
             </a>
         </Logo>
      </Div>

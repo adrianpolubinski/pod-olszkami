@@ -27,6 +27,8 @@ const Div = styled.div`
     display: flex;
     flex-direction: column;
 
+    z-index: 99;
+
     @media (min-width: 1200px) {
         display: none;
     }
@@ -62,7 +64,7 @@ function MobileMenu({isMobileMenuOpen}){
     return(
         <Div isOpen={isOpen}>
             <div>
-                <a href="/"><Brand black resizeByHeight /></a>
+                <a href="#home"><Brand black resizeByHeight /></a>
             </div>
             <NavigationWrapper>
                 <MainNav mobileMenu></MainNav>

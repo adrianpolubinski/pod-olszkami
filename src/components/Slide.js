@@ -23,7 +23,7 @@ const Li = styled.li`
     transform: translate(-50%, -50%);
   }
 
-  & div h2 {
+  & div p:first-child {
     font-size: 5rem;
     color: white;
     text-align: center;
@@ -35,7 +35,7 @@ const Li = styled.li`
   
  }
 
-  & div p{
+  & div p:last-child {
       font-size: 3rem;
       color:white;
       text-shadow: .3rem .3rem .3rem #000;
@@ -57,7 +57,7 @@ function Slide( {config, isActive} ) {
   return (
     <Li isActive={isActive} url={`url(${config.url})`}>
       <div>
-          <h2>{config.title}</h2>
+          <p>{config.title}</p>
           <p>{config.subtitle}</p>
       </div>
     </Li>

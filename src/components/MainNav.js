@@ -4,7 +4,6 @@ import styled from "styled-components";
 const Nav = styled.nav`
 
     & ul {
-        list-style: none;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -113,15 +112,15 @@ function MainNav( {spaceBetween, mobileMenu, primaryMenu, mainMenu} ) {
     const menuItems = [
         {
             title: 'Strona główna',
-            href: '/'
+            href: '#home'
         },
         {
             title: 'Galeria',
             href: '/'
         },
         {
-            title: 'Pozdrowienia',
-            href: '/'
+            title: 'O Nas',
+            href: '#aboutUs'
         },
         {
             title: 'ze Stegny',

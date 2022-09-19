@@ -1,15 +1,16 @@
-import HeaderLayout from './components/HeaderLayout';
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+
+import HeaderLayout from './layouts/HeaderLayout';
 import MainMenu from './components/MainMenu';
 import InfoBar from './components/InfoBar';
 import Hamburger from './components/Hamburger';
-
-import SlideList from './components/SlideList';
-import ScrollIcon from './components/ScrollIcon';
-
-import styled from 'styled-components';
+import Slider from './components/Slider';
 import MobileMenu from './components/MobileMenu';
-import { useEffect, useState } from 'react';
 import PrimaryMenu from './components/PrimaryMenu';
+import MainLayout from './layouts/MainLayout';
+import FooterLayout from './layouts/FooterLayout';
+import AboutUs from './components/AboutUs';
 
 const HamburgerWrapper = styled.div`
   position: fixed;
@@ -18,10 +19,12 @@ const HamburgerWrapper = styled.div`
   background-color: white;
   width: 5rem;
   height: 4rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  z-index: 99;
+
   @media (min-width: 768px){
     width: 6rem;
     height: 5rem;
@@ -61,8 +64,7 @@ function App() {
   return (
     <>
       <HeaderLayout>
-        <SlideList />
-        <ScrollIcon />
+        <Slider />
         <InfoBar isTopVisible={isTopVisible} />
         <MainMenu isTopVisible={isTopVisible} />
         <PrimaryMenu isTopVisible={isTopVisible} />
@@ -71,6 +73,15 @@ function App() {
           <Hamburger changeMobileMenuState={changeMobileMenuState}/>
         </HamburgerWrapper>
       </HeaderLayout>
+
+      <MainLayout>
+        
+        <AboutUs />
+      </MainLayout>
+
+      <FooterLayout>
+
+      </FooterLayout>
     </>
   );
 }

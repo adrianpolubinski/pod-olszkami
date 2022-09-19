@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const Header = styled.header`
-    position: relative;
     height: 100vh;
     width: 100%;
 `;
@@ -9,7 +8,7 @@ const Header = styled.header`
 function HeaderLayout( {children} ){
 
     return (
-        <Header>
+        <Header id="home">
             { children }
         </Header>
     )

@@ -27,17 +27,19 @@ img {
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 7.5rem;
 }
 
 body {
   min-height: 100%;
-  font-family: 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   font-size: 1.6rem;
   line-height: 1.25;
-
-
-
   min-height: 200vh;
+}
+
+@font-face {
+  font-family: 'Caveat';
+  src: local('Caveat'), url(./fonts/Caveat/Caveat-Regular.ttf) format('truetype');
 }

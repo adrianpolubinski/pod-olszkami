@@ -15,11 +15,11 @@ const Div = styled.div`
     transition: .6s;
 
     width: 100%;
-    height: 7rem;
+    height: 8rem;
 
     display: none;
     
-    @media (min-width: 800px){
+    @media (min-width: 768px){
         display: block;
     }
 

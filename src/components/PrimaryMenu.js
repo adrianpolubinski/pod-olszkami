@@ -13,7 +13,7 @@ const Div = styled.div`
     background-color: white;
     width: 100%;
     padding: 0 2rem;
-
+    z-index: 99;
    
     
     transition: .7s;
@@ -57,7 +57,7 @@ function PrimaryMenu({isTopVisible}) {
     return (
         <Div isVisible={isVisible}>
             <Inner>
-                <div><a href="/"><Brand black resizeByHeight/></a></div>
+                <div><a href="#home"><Brand black resizeByHeight/></a></div>
                 
                 <MainNav primaryMenu/>
             </Inner>
