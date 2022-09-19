@@ -40,7 +40,7 @@ function AboutUs(){
             h2: "Co w sobie cenimy?",
             p: "Najważniejszą rzeczą dla nas jest komfort naszych klientów. Posiadamy szereg udogodnień takich jak: duży bezpłatny parking, dobrą lokalizację, albowiem jesteśmy zlokalizowani przy samej drodze krajowej DK16. W zasięgu 300 m znajduje się sklep spożywczy oraz stacja paliw.",
             imgSrc: "img/aboutUs/aboutUs-image-3.jpg",
-            imgAlt: "Zdjęcie w zimową porę"
+            imgAlt: "Zdjęcie w zimową porę roku"
         }
     ]
 
@@ -80,7 +80,7 @@ function AboutUs(){
     return (
         <Section id="aboutUs">
             <Inner>
-                <h1>Pod Olszkami - Spływy kajakowe, Sauna, oraz wiele więcej ! </h1>
+                <h1>Pod Olszkami - Spływy kajakowe, Sauna, oraz wiele więcej! </h1>
                 {articleElements}
             </Inner>
         </Section>
