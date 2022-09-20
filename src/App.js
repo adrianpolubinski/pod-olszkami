@@ -11,6 +11,7 @@ import PrimaryMenu from './components/PrimaryMenu';
 import MainLayout from './layouts/MainLayout';
 import FooterLayout from './layouts/FooterLayout';
 import AboutUs from './components/AboutUs';
+import Gallery from './components/Gallery';
 
 const HamburgerWrapper = styled.div`
   position: fixed;
@@ -23,7 +24,7 @@ const HamburgerWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 99;
+  z-index: 10;
 
   @media (min-width: 768px){
     width: 6rem;
@@ -77,6 +78,7 @@ function App() {
       <MainLayout>
         
         <AboutUs />
+        <Gallery />
       </MainLayout>
 
       <FooterLayout>

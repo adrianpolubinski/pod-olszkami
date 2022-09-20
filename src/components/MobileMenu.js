@@ -27,7 +27,7 @@ const Div = styled.div`
     display: flex;
     flex-direction: column;
 
-    z-index: 99;
+    z-index: 10;
 
     @media (min-width: 1200px) {
         display: none;
