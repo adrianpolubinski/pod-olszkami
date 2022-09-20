@@ -4,7 +4,7 @@ const Div = styled.div`
     max-width: 122rem;
     height: 100%;
     width: 100%;
-    padding: 0 2rem;
+    padding: 0 1rem;
     margin: 0 auto;
 `;
 

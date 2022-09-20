@@ -6,6 +6,7 @@ import AboutUsArticle from "./AboutUsArticle";
 
 const Section = styled.section`
     overflow: hidden;
+    
     & h1 {
       
         margin: 5rem 0;

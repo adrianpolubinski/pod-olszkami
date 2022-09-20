@@ -13,7 +13,7 @@ const Div = styled.div`
     background-color: white;
     width: 100%;
     padding: 0 2rem;
-    z-index: 99;
+    z-index: 10;
    
     
     transition: .7s;
