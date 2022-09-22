@@ -6,11 +6,6 @@ import GallerySlider from "./GallerySlider";
 const Section = styled.section`
     background-color: #070918;
     padding: 3rem 0;
-    & h2 {
-        color: white;
-        text-align: center;
-        font-size: 4rem;
-    }
 `;
 
 function Gallery() {
@@ -122,7 +117,6 @@ function Gallery() {
     return (
         <Section>
             <Inner>
-                <h2>Galeria</h2>
                 <GallerySlider photos={winterPhotos} title="Zimowy Klimat"/>
                 <GallerySlider photos={viewPhotos} title="Piękne widoczki"/>
                 <GallerySlider photos={placePhotos} title="Nasze miejsce"/>

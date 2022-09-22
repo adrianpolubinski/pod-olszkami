@@ -2,9 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import GalleryModal from "./GalleryModal";
 import GalleryPhotoList from "./GalleryPhotoList";
+import GalleryButton from "./GalleryButton";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleChevronLeft, faCircleChevronRight } from "@fortawesome/free-solid-svg-icons"
 
 
 const Div = styled.div`
@@ -35,19 +34,7 @@ const Div = styled.div`
         position: relative;
     }
 
-    & button {
-        height: 5rem;
-        width: 5rem;
-        background: none;
-        border: none;   
-    }
-
-    & svg {
-        color: white;
-        width: 80%;
-        height: 80%;
-        transition: .5s;
-    }
+    
 
     @media (min-width: 500px) {
         & > div {
@@ -85,9 +72,16 @@ function GallerySlider( {photos, title} ) {
     const [selectedPhoto, setSelectedPhoto] = useState();
     const [galleryModalVisible, setGalleryModalVisible] = useState(false);
 
+    const [leftButtonActive, setLeftButtonActive] = useState(false);
+    const [rightButtonActive, setRightButtonActive] = useState(true);
+
+
+
     const scrollListenerHandler=()=>{
         setTransform(0);
         setActualPhoto(0);
+        setLeftButtonActive(false);
+        setRightButtonActive(true)
     }
     
     useEffect(()=>{
@@ -96,11 +90,24 @@ function GallerySlider( {photos, title} ) {
 
 
     const prevPhotoHandler = ()=> {
+        // check unlock right buton
+        if(window.innerWidth < 800 && actualPhoto < photos.length){
+            setRightButtonActive(true);
+        } else if(window.innerWidth < 1200 && actualPhoto < photos.length-1){
+            setRightButtonActive(true);
+        } else if(actualPhoto < photos.length-2){
+            setRightButtonActive(true);
+        }
+        // check lock left button
+        if (actualPhoto === 1){
+            setLeftButtonActive(false);
+        }
+        // check schould change slide
         if(actualPhoto > 0){
             const photoWidth = photoListRef.current.children[0].clientWidth;
             setTransform( prev => prev + photoWidth + 20 );
             setActualPhoto( prev => prev - 1 );
-        }
+        }     
     }
 
     const setNextPhoto =()=> {
@@ -112,11 +119,23 @@ function GallerySlider( {photos, title} ) {
     const nextPhotoHandler = ()=> {
         if(window.innerWidth < 800 && actualPhoto < photos.length-1){
             setNextPhoto();
+            if (actualPhoto === photos.length-2){
+                setRightButtonActive(false);
+            }
         } else if(window.innerWidth < 1200 && actualPhoto < photos.length-2){
             setNextPhoto();
+            if (actualPhoto === photos.length-3){
+                setRightButtonActive(false);
+            }
         } else if(actualPhoto < photos.length-3){
             setNextPhoto();
-        }
+            if (actualPhoto === photos.length-4){
+                setRightButtonActive(false);
+            }
+        } 
+        if (actualPhoto === 0){
+            setLeftButtonActive(true);
+        }  
     }
 
     const onClickPhoto = (event) => {
@@ -134,7 +153,7 @@ function GallerySlider( {photos, title} ) {
         <Div>
             <h3>{title}</h3>
             <div>
-                <button onClick={prevPhotoHandler}><FontAwesomeIcon icon={faCircleChevronLeft} /></button>
+                <GalleryButton left onClick={prevPhotoHandler} active={leftButtonActive}></GalleryButton>
                 <div>
                     <GalleryPhotoList 
                         photos={photos} 
@@ -142,7 +161,7 @@ function GallerySlider( {photos, title} ) {
                         photoListRef={photoListRef}
                         onClickPhoto={onClickPhoto}/>
                 </div>
-                <button onClick={nextPhotoHandler}><FontAwesomeIcon icon={faCircleChevronRight} /></button>
+                <GalleryButton right onClick={nextPhotoHandler} active={rightButtonActive}></GalleryButton>
             </div>
         </Div>
         <GalleryModal 
