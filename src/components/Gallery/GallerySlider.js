@@ -7,13 +7,14 @@ import GalleryButton from "./GalleryButton";
 
 
 const Div = styled.div`
-    margin-top: 5rem;
+    margin-top: 3rem;
 
     & > h3 {
         text-align: center;
         color: white;
-        font-size: 5rem;
+        font-size: 3.5rem;
         font-family: Caveat, sans-serif;
+        border-bottom: .1rem solid white;
     }
 
     & > div {

@@ -12,8 +12,6 @@ const Article = styled.article`
     justify-content: center;
     transition: transform 1.5s, opacity 1.5s;
 
-
-
     &:nth-child(odd){
         transform: translateX(-50%);    
     }
@@ -26,7 +24,6 @@ const Article = styled.article`
         width: 100%;
     }
 
-    
     & div h2 {
         font-size: 3rem;
         font-family: Caveat, sans-serif;

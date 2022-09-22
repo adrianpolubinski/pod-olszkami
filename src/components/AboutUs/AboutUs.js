@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import styled from "styled-components";
-import Inner from "../layouts/Inner";
+import Inner from "../../layouts/Inner";
 import AboutUsArticle from "./AboutUsArticle";
 
 const Section = styled.section`

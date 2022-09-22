@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
-import Backdrop from './Backdrop';
-import PhotoOverlay from './PhotoOverlay';
+import Backdrop from '../Modal/Backdrop';
+import PhotoOverlay from '../Modal/PhotoOverlay';
 
 function GalleryModal({galleryModalVisible, setGalleryModalVisible, selectedPhoto, actualPhoto, photosCount}) {
 
