@@ -115,17 +115,18 @@ function MainNav( {spaceBetween, mobileMenu, primaryMenu, mainMenu} ) {
             href: '#home'
         },
         {
-            title: 'Galeria',
-            href: '/'
-        },
-        {
             title: 'O Nas',
             href: '#aboutUs'
         },
         {
-            title: 'ze Stegny',
-            href: '/'
+            title: 'Trasy',
+            href: '#routes'
+        },
+        {
+            title: 'Galeria',
+            href: '#gallery'
         }
+        
     ]
 
     const menuItemsElements = menuItems.map((item, index) => (

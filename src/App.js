@@ -2,16 +2,17 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import HeaderLayout from './layouts/HeaderLayout';
-import MainMenu from './components/MainMenu';
-import InfoBar from './components/InfoBar';
-import Hamburger from './components/Hamburger';
-import Slider from './components/Slider';
-import MobileMenu from './components/MobileMenu';
-import PrimaryMenu from './components/PrimaryMenu';
+import MainMenu from './components/Navigation/MainMenu';
+import InfoBar from './components/Navigation/InfoBar';
+import Hamburger from './components/Navigation/Hamburger';
+import Slider from './components/Slider/Slider';
+import MobileMenu from './components/Navigation/MobileMenu';
+import PrimaryMenu from './components/Navigation/PrimaryMenu';
 import MainLayout from './layouts/MainLayout';
 import FooterLayout from './layouts/FooterLayout';
-import AboutUs from './components/AboutUs';
-import Gallery from './components/Gallery';
+import AboutUs from './components/AboutUs/AboutUs';
+import Gallery from './components/Gallery/Gallery';
+import Routes from './components/Routes/Routes';
 
 const HamburgerWrapper = styled.div`
   position: fixed;
@@ -76,11 +77,10 @@ function App() {
       </HeaderLayout>
 
       <MainLayout>
-        
         <AboutUs />
+        <Routes />
         <Gallery />
       </MainLayout>
-
       <FooterLayout>
 
       </FooterLayout>

@@ -9,9 +9,8 @@ const Article = styled.article`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     transition: transform 1.5s, opacity 1.5s;
-
-
 
     &:nth-child(odd){
         transform: translateX(-50%);    
@@ -25,7 +24,6 @@ const Article = styled.article`
         width: 100%;
     }
 
-    
     & div h2 {
         font-size: 3rem;
         font-family: Caveat, sans-serif;
@@ -41,7 +39,7 @@ const Article = styled.article`
     & img {
         height: auto;
         width: 100%;
-        max-width: 50rem;
+        max-width: 35rem;
         margin-top: 5rem;
         border-radius: 2rem;
         box-shadow: 0rem 0rem 1.2rem .5rem #000;
@@ -57,16 +55,13 @@ const Article = styled.article`
     }
 
     @media (min-width: 900px) {
-        height: 400px;
-        margin: 0;
+        margin: 5rem 0;
         flex-direction: row;
         &:nth-child(odd){
             & img {
                 margin-left: 3rem;
                 box-shadow: 1rem 1rem 1.5rem .3rem #000;
             }
-
-            
         }
         &:nth-child(even){
             flex-direction: row-reverse; 
@@ -88,11 +83,12 @@ const Article = styled.article`
     }
     
     @media (min-width: 1200px) {
+        
         & div h2 {
             font-size: 4rem;
         }
         & div p {
-            font-size: 3.5rem;
+            font-size: 3.3rem;
         }
         
     }
