@@ -4,13 +4,15 @@ import RouteBox from "./RouteBox";
 import RoutesConfig from "./RoutesConfig";
 
 const Section = styled.section`
-    background-color: #070918;
+   
     padding-top: 2rem;
+    background-color: #070918;
     & h2{
         font-size: 5rem;
         text-align: center;
         font-family: Caveat, sans-serif;
-        color: white;;
+        color: white;
+        border-bottom: .5rem solid white;
     }
 
     & > div > div {

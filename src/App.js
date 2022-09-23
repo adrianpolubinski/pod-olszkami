@@ -13,6 +13,10 @@ import FooterLayout from './layouts/FooterLayout';
 import AboutUs from './components/AboutUs/AboutUs';
 import Gallery from './components/Gallery/Gallery';
 import Routes from './components/Routes/Routes';
+import Footer from './components/Footer/Footer';
+import Informations from './components/Informations/Informations';
+import HeaderTitle from './components/HeaderTitle/HeaderTitle';
+import AboutRiver from './components/AboutRiver/AboutRiver';
 
 const HamburgerWrapper = styled.div`
   position: fixed;
@@ -40,6 +44,8 @@ const HamburgerWrapper = styled.div`
 
 
 `
+
+
 
 function App() {
 
@@ -77,12 +83,17 @@ function App() {
       </HeaderLayout>
 
       <MainLayout>
+        <HeaderTitle />
+        <AboutRiver />
         <AboutUs />
+        <Informations />
         <Routes />
+        
         <Gallery />
       </MainLayout>
-      <FooterLayout>
 
+      <FooterLayout>
+          <Footer />
       </FooterLayout>
     </>
   );

@@ -4,6 +4,8 @@ import ScrollIcon from "./ScrollIcon";
 import SlideList from "./SlideList";
 import Pagination from "./Pagination";
 import { useEffect, useState } from "react";
+import { useCallback } from "react";
+import { useMemo } from "react";
 
 
 const Div=styled.div`
@@ -18,25 +20,36 @@ function Slider(){
     const [activeSlide, setActiveSlide] = useState(0);
     const [autoChangeSlide, setAutoChangeSlide] = useState(true);
 
-    const slidesConfig = [{
-        url: 'img/slider/slider-image-1.jpg',
-        title: 'Super',
-        subtitle: 'Super piekny subtitle'
-    },
-    {
-        url: 'img/slider/slider-image-2.jpg',
-        title: 'Mega',
-        subtitle: 'Mega piekny subtitle'
-    },
-    {
-        url: 'img/slider/slider-image-3.jpg',
-        title: 'Fajnie',
-        subtitle: 'dsadssd piekny subtitle'
-    }]
+    const slidesConfig = useMemo( () => {
+        return [{
+            url: 'img/slider/slider-image-1.jpg',
+            title: 'Super',
+            subtitle: 'Super piekny subtitle'
+        },
+        {
+            url: 'img/slider/slider-image-2.jpg',
+            title: 'Mega',
+            subtitle: 'Mega piekny subtitle'
+        },
+        {
+            url: 'img/slider/slider-image-3.jpg',
+            title: 'Fajnie',
+            subtitle: 'dsadssd piekny subtitle'
+        }]
+    }, []);
+    
+
+    const changeSlideHandle = useCallback( () => {
+        setActiveSlide(prev => {
+            if(prev < slidesConfig.length - 1)
+                return prev+1;
+            else
+                return 0;
+        })
+    }, [slidesConfig]);
 
     useEffect(() => {
         let intervalIndex;
-
         if(autoChangeSlide){
             intervalIndex = setInterval(changeSlideHandle, 6000);
         } else {
@@ -44,18 +57,8 @@ function Slider(){
         }
 
         return () => clearInterval(intervalIndex);
-      }, [autoChangeSlide]);
 
-      
-    const changeSlideHandle = () => {
-        setActiveSlide(prev => {
-            if(prev < slidesConfig.length - 1)
-                return prev+1;
-            else
-                return 0;
-        })
-    }
-
+    }, [autoChangeSlide, changeSlideHandle]);
 
     const changeOnSelectSlide=(slideIndex)=>{
         setActiveSlide(slideIndex);

@@ -1,87 +1,78 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useReducer } from "react";
+import { useCallback, useEffect, useMemo } from "react";
+
+import { initialState, actionTypes, aboutUsReducer } from "./AboutUsReducer";
+
 import styled from "styled-components";
 import Inner from "../../layouts/Inner";
 import AboutUsArticle from "./AboutUsArticle";
+import AboutUsConfig from './AboutUsConfig';
 
 const Section = styled.section`
+    color: #333;
     overflow: hidden;
-    
-    & h1 {
-      
+    & > div > h2 {
+        text-align: center;
+        color: #333;
         margin: 5rem 0;
-        font-size: 3rem;
+        font-size: 5rem;
         font-family: Caveat, sans-serif;
-        @media (min-width: 500px) {
-            font-size: 5rem;
-        }
+        border-bottom: .5rem solid black;
     }
-
 `
+
 
 function AboutUs(){
 
-    const [visibleArticles, setVisibleArticles] = useState(0);
+    const [{visibleArticles, articleRefs}, dispatch] = useReducer(aboutUsReducer, initialState);
 
-    const articleRefs = [];
-    const articles = [
-        {
-            h2: "Kim jesteśmy?",
-            p: "Znajdujemy się w zacisznym i malowniczym miejscu nad rzeką Czarna Hańcza Zajmujemy się organizacją spływów kajakowych. Nasze kajaki pływają po rzekach: Czarna Hańcza, Marycha, Kanał Augustowski.",
-            imgSrc: "img/aboutUs/photo-1.jpg",
-            imgAlt: "Zdjęcie kajaków"
-        },
-        {
-            h2: "Co oferujemy?",
-            p: "Oferujemy miejsce rekreacyjne z ogniskiem, dużą nową wiatą i możliwością wynajęcia sauny. Pole namiotowe, do dyspozycji odpoczywających są udostepnione 2 łazienki z prysznicami. Do każdego klienta podchodzimy indywidualnie.",
-            imgSrc: "img/aboutUs/photo-2.jpg",
-            imgAlt: "Zdjęcie wiaty z sauną"
-        },
-        {
-            h2: "Co w sobie cenimy?",
-            p: "Najważniejszą rzeczą dla nas jest komfort naszych klientów. Posiadamy szereg udogodnień takich jak: duży bezpłatny parking, dobrą lokalizację, albowiem jesteśmy zlokalizowani przy samej drodze krajowej DK16. W zasięgu 300 m znajduje się sklep spożywczy oraz stacja paliw.",
-            imgSrc: "img/aboutUs/photo-3.jpg",
-            imgAlt: "Zdjęcie w zimową porę"
-        }
-    ]
+    // not get same articles after rerender
+    const articles = useMemo(() => {
+        return AboutUsConfig;
+    }, []);
 
-   
-
-    const setVisibleArticlesHandler = () => {
-        const windowOffsetBottom = window.innerHeight+window.scrollY;
+    const memoizedSetVisibleArtivles = useCallback(() => {
+        const windowOffsetBottom = window.innerHeight+window.scrollY-50;
         const articleOffestTop1 = articleRefs[0].current.offsetTop;
         const articleOffestTop2 = articleRefs[1].current.offsetTop;
         const articleOffestTop3 = articleRefs[2].current.offsetTop;
-        setVisibleArticles(0);
+        dispatch({type: actionTypes.updateVisibleArticles, payload: 0})
         if( windowOffsetBottom > articleOffestTop1 
             && windowOffsetBottom < articleOffestTop2)
-                setVisibleArticles(1);
+                dispatch({type: actionTypes.updateVisibleArticles, payload: 1})
         else if( windowOffsetBottom > articleOffestTop2 
             && windowOffsetBottom < articleOffestTop3)
-            setVisibleArticles(2);
+                dispatch({type: actionTypes.updateVisibleArticles, payload: 2})
         else if( windowOffsetBottom > articleOffestTop3)
-            setVisibleArticles(3);
-    }
+                dispatch({type: actionTypes.updateVisibleArticles, payload: 3})
+    }, [articleRefs])
 
     useEffect(()=>{
-        window.addEventListener('scroll', setVisibleArticlesHandler);
-        return ()=> window.removeEventListener('scroll', setVisibleArticlesHandler)
-    }, [setVisibleArticlesHandler])
+        window.addEventListener('scroll', memoizedSetVisibleArtivles);
+        return ()=> window.removeEventListener('scroll', memoizedSetVisibleArtivles)
+    }, [memoizedSetVisibleArtivles])
 
-    const getArticleRefs = ( ref ) => {
-        articleRefs.push(ref)
-    }
-
+  
     const articleElements = articles.map((article, index) => {
         if(index<visibleArticles)
-            return <AboutUsArticle key={index} article={article} getArticleRefs={getArticleRefs} visible={true}/>
-        else  return <AboutUsArticle key={index} article={article}       getArticleRefs={getArticleRefs} visible={false}/>
+            return (
+                <AboutUsArticle 
+                    key={index} 
+                    article={article} 
+                    dispatchAboutUs={dispatch} 
+                    visible={true}/>)
+        else  return (
+                <AboutUsArticle 
+                    key={index} 
+                    article={article}
+                    dispatchAboutUs={dispatch}
+                    visible={false}/>)
     });
 
     return (
         <Section id="aboutUs">
             <Inner>
-                <h1>Pod Olszkami - Spływy kajakowe, Sauna, oraz wiele więcej! </h1>
+                <h2>Kilka słów O NAS</h2>
                 {articleElements}
             </Inner>
         </Section>

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import MobileMenu from "./MobileMenu";
 
 const Ul = styled.ul`
 
