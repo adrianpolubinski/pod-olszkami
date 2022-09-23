@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import styled from "styled-components";
+import { actionTypes } from "./AboutUsReducer";
 
 const Article = styled.article`
     opacity: 0;
@@ -106,22 +107,24 @@ const Article = styled.article`
             `
         }
     }}
-
-
-  
-
-
 `
 
-function AboutUsArticle( {article, getArticleRefs, visible} ) {
+
+function AboutUsArticle( { visible, dispatchAboutUs, article } ) {
 
     const [isVisible, setIsVisible] = useState(visible);
-    const articleRef = useRef();
 
-    useEffect(()=>{ setIsVisible(visible) }, [visible])
-
+    useEffect(()=>{ 
+        setIsVisible(visible);
+    }, [visible])
     
-    getArticleRefs(articleRef);
+    useEffect(()=>{
+        dispatchAboutUs({type: actionTypes.addArticleRef, payload: articleRef});
+    }, [dispatchAboutUs])
+
+
+    const articleRef = useRef();
+   
     return (
         <Article visible={isVisible} ref={articleRef}>
             <div>     

@@ -30,7 +30,7 @@ function RoutesButton( {changeButtonState} ) {
 
     useEffect(()=>{
         changeButtonState(isActive);
-    }, [isActive])
+    }, [isActive, changeButtonState])
 
     return (
         <Button onClick={onClickHandle} >{setText()}</Button>

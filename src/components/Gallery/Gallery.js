@@ -12,6 +12,7 @@ const Section = styled.section`
         font-weight: 700;
         font-size: 5rem;
         text-align: center;
+        border-bottom: .5rem solid white;
     }
 `;
 
