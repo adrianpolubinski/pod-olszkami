@@ -10,7 +10,7 @@ const Nav = styled.nav`
     }
 
     & li {
-        width: 20rem;
+        width: 15rem;
         text-align: center;
     }
     & a {
@@ -53,10 +53,10 @@ const Nav = styled.nav`
 
     ${props => { if(props.spaceBetween) return `
             & li{
-                &:nth-child(2) {
+                &:nth-child(3) {
                     margin-right: 10rem;
                 }
-                &:nth-child(3) {
+                &:nth-child(4) {
                     margin-left: 10rem;
                 }
             }
@@ -111,16 +111,25 @@ function MainNav( {spaceBetween, mobileMenu, primaryMenu, mainMenu} ) {
 
     const menuItems = [
         {
-            title: 'Strona główna',
+            title: 'Home',
             href: '#home'
         },
         {
             title: 'O Nas',
             href: '#aboutUs'
         },
+        
         {
             title: 'Trasy',
             href: '#routes'
+        },
+        {
+            title: 'Zasady',
+            href: '#rules'
+        },
+        {
+            title: 'Sauna',
+            href: '#sauna'
         },
         {
             title: 'Galeria',

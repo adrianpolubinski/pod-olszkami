@@ -5,12 +5,12 @@ import styled from "styled-components"
 import Inner from "../../layouts/Inner"
 
 const Section = styled.section`
- 
+ overflow: hidden;
     & > div > div {
         display: flex;
         flex-direction: column;
         align-items: center;
-        overflow: hidden;
+        
         & > img {
             transform: translateX(50%);
             transition: 1s;
@@ -95,11 +95,11 @@ function AboutRiver(){
                 <div>
               
                         
-                    <p>Czarna Hańcza jest największą rzeką Suwalszczyzny
+                    <p>Czarna Hańcza jest największą rzeką Suwalszczyzny.
                     Jezioro Hańcza daje początek rzece, przez pierwsze kilometry płynie głębokim wąwozem w obrębie Suwalskiego Parku Krajobrazowego.
                     Na odcinku za jeziorem Wigry Czarna Hańcza jest jednym z najsłynniejszych polskich nizinnych szlaków kajakowych. Najpierw bardzo powoli płynie wśród rozlewisk i podmokłych łąk, by za Wysokim Mostem lekko przyspieszyć swój bieg w dolinie wcinającej się bardzo malowniczo w Puszczę Augustowską. Na tym odcinku rzeka silnie meandruje. Na wysokości wsi Rygol włącza się w system Kanału Augustowskiego i kieruje do granicy białoruskiej doprowadzając jej wody do Niemna.</p>
                    
-                    <img src="img/aboutUs/photo-1.jpg" loading="lazy" alt="Zdjęcie Czarnej Hańczy"></img>
+                    <img src="img/aboutRiver/about-river-photo-1.jpg" loading="lazy" alt="Zdjęcie Czarnej Hańczy"></img>
                 </div>
                 
             </Inner>

@@ -35,7 +35,7 @@ function Routes(){
 
     const colors= ["blue", "red", "orange", "green", "pink", "aqua"];
     const routeBoxElements = RoutesConfig.map((route, index)=>{
-        return (<RouteBox key={index} color={colors[index]} title={route.title} begin={route.begin} end={route.end} distance={route.distance} time={route.time} description={route.description} info={route.info}/>)
+        return (<RouteBox key={index} color={colors[index]} title={route.title} begin={route.begin} end={route.end} distance={route.distance} time={route.time} description={route.description}/>)
     })
 
     return(

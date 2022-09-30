@@ -14,7 +14,7 @@ import AboutUs from './components/AboutUs/AboutUs';
 import Gallery from './components/Gallery/Gallery';
 import Routes from './components/Routes/Routes';
 import Footer from './components/Footer/Footer';
-import Informations from './components/Informations/Informations';
+import Rules from './components/Rules/Rules';
 import HeaderTitle from './components/HeaderTitle/HeaderTitle';
 import AboutRiver from './components/AboutRiver/AboutRiver';
 
@@ -86,9 +86,8 @@ function App() {
         <HeaderTitle />
         <AboutRiver />
         <AboutUs />
-        <Informations />
         <Routes />
-        
+        <Rules />
         <Gallery />
       </MainLayout>
 

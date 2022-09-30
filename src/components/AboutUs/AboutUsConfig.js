@@ -1,7 +1,7 @@
 const AboutUsConfig = [
     {
         h2: "Kim jesteśmy?",
-        p: "Znajdujemy się w zacisznym i malowniczym miejscu nad rzeką Czarna Hańcza Zajmujemy się organizacją spływów kajakowych. Nasze kajaki pływają po rzekach: Czarna Hańcza, Marycha, Kanał Augustowski.",
+        p: "Jesteśmy małą firmą rodzinną. Znajdujemy się w zacisznym i malowniczym miejscu nad rzeką Czarna Hańcza Zajmujemy się organizacją spływów kajakowych. Nasze kajaki pływają po rzekach: Czarna Hańcza, Marycha, Kanał Augustowski.",
         imgSrc: "img/aboutUs/photo-1.jpg",
         imgAlt: "Zdjęcie kajaków"
     },

@@ -41,8 +41,9 @@ const RoutesConfig = [
     },
     {
         title: "Marycha",
-       
-        info: "Organizujemy też spływy rzeką Marycha. Tutaj umawiamy każdego klienta indywidualnie. Najkorzystniejszym rozwiązaniem są grupy 8 osobowe.",
+        begin: 'Zelwa',
+        end: "Stanowisko",
+        distance: "17 km",
         time: "5/6 godziny",
         description: "Marycha  rzeka na pograniczu polsko-litewskim. Jest lewobrzeżnym dopływem Czarnej Hańczy Zlewnia rzeki została ukształtowana przez zlodowacenie bałtyckie i charakteryzuje się zróżnicowaną rzeźbą terenu z licznymi jeziorami rynnowymi i wytopiskowymi oraz dużą ilością zagłębień wytopiskowych. Dolina rzeki jest szeroka, w dolnym odcinku zalesiona (Puszcza Augustowska). Źródła rzeki znajdują się w Polsce, przepływa przez Sejny, wpada do jeziora Pomorze, następnie stanowi granicę polsko-litewską, a dalej litewsko-białoruską; na północ od wsi Czertok wpada do rzeki Czarnej Hańczy, jako jej dopływ lewobrzeżny.",
     }

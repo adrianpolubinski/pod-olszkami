@@ -20,6 +20,7 @@ const Li = styled.li`
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 80%;
     transform: translate(-50%, -50%);
   }
 
@@ -27,10 +28,10 @@ const Li = styled.li`
     font-size: 5rem;
     color: white;
     text-align: center;
-    text-shadow: .3rem .3rem .3rem #000;
+    text-shadow: .4rem .4rem .4rem #000;
 
     @media (min-width: 768px) {
-      font-size: 8rem;
+      font-size: 7rem;
     }
   
  }
@@ -38,6 +39,7 @@ const Li = styled.li`
   & div p:last-child {
       font-size: 3rem;
       color:white;
+      text-align: center;
       text-shadow: .3rem .3rem .3rem #000;
 
       @media (min-width: 500px) {
