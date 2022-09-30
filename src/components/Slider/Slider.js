@@ -23,18 +23,18 @@ function Slider(){
     const slidesConfig = useMemo( () => {
         return [{
             url: 'img/slider/slider-image-1.jpg',
-            title: 'Super',
-            subtitle: 'Super piekny subtitle'
+            title: 'Spływy kajakowe Czarną Hańczą oraz Marychą',
+            subtitle: '(sauna)'
         },
         {
             url: 'img/slider/slider-image-2.jpg',
-            title: 'Mega',
-            subtitle: 'Mega piekny subtitle'
+            title: 'Spływy kajakowe Czarną Hańczą oraz Marychą',
+            subtitle: '(sauna)'
         },
         {
             url: 'img/slider/slider-image-3.jpg',
-            title: 'Fajnie',
-            subtitle: 'dsadssd piekny subtitle'
+            title: 'Spływy kajakowe Czarną Hańczą oraz Marychą',
+            subtitle: '(sauna)'
         }]
     }, []);
     

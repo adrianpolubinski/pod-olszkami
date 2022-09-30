@@ -6,7 +6,7 @@ import Inner from "../../layouts/Inner";
 const Div = styled.div`
 border-top: solid .5rem white;
 
-    height: 10rem;
+    height: 7rem;
     display: flex;
     justify-content: space-between;
     padding-top: 1rem;

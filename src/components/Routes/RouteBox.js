@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import {FontAwesomeIcon}  from "@fortawesome/react-fontawesome";
-import { faFlag, faFlagCheckered, faRoute, faStopwatch, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
+import { faFlag, faFlagCheckered, faRoute, faStopwatch } from "@fortawesome/free-solid-svg-icons";
 import RoutesButton from "./RoutesButton";
 import { useState } from "react";
 
@@ -130,7 +130,7 @@ const TitleBox= styled.div`
 
 `
 
-function RouteBox({title, distance, time, description, begin, end, info, color}) {
+function RouteBox({title, distance, time, description, begin, end, color}) {
 
     const [isExpand, setIsExpand] = useState(false);
 
@@ -152,8 +152,6 @@ function RouteBox({title, distance, time, description, begin, end, info, color})
                     {end && <p><FontAwesomeIcon icon={faFlagCheckered} /> Koniec trasy: {end}</p>}
                     {distance && <p><FontAwesomeIcon icon={faRoute} /> Dystans trasy: {distance}</p>}
                     {time && <p><FontAwesomeIcon icon={faStopwatch} /> Czas trasy: {time}</p>}
-                    {info && <p><FontAwesomeIcon icon={faTriangleExclamation} color="red" /> Uwaga!</p>}
-                    {info && <p>{info}</p>}
                 </div>
                 <div>
                     <p>Opis trasy:</p>
